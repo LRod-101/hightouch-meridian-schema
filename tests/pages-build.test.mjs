@@ -23,6 +23,12 @@ test('production entry assets resolve under the GitHub repository subpath', asyn
   assert.doesNotMatch(indexHtml, /(?:src|href)="\/assets\//)
 })
 
+test('journey route is emitted as a directly addressable GitHub Pages entry', async () => {
+  const journeyHtml = await readFile('dist/client/journey/index.html', 'utf8')
+  assert.match(journeyHtml, new RegExp(`src="${expectedBase}assets/`))
+  assert.match(journeyHtml, /<title>Women’s Tops — Viewed, Not Purchased<\/title>/)
+})
+
 test('production bundle has no runtime font or root-relative logo dependency', async () => {
   const { css, javascript } = await productionAssets()
   assert.doesNotMatch(css, /fonts\.googleapis\.com|fonts\.gstatic\.com/)

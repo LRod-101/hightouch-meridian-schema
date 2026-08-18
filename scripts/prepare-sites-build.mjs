@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { copyFileSync, existsSync, mkdirSync } from "node:fs";
+import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -15,7 +15,19 @@ for (const file of [index, worker, hosting]) {
 
 mkdirSync(path.join(dist, "server"), { recursive: true });
 mkdirSync(path.join(dist, ".openai"), { recursive: true });
+mkdirSync(path.join(dist, "client", "journey"), { recursive: true });
 copyFileSync(worker, path.join(dist, "server", "index.js"));
 copyFileSync(hosting, path.join(dist, ".openai", "hosting.json"));
 
-console.log("Prepared Sites build: dist/server/index.js and dist/.openai/hosting.json");
+const journeyHtml = readFileSync(index, "utf8")
+  .replace(
+    "Meridian Retail Group customer schema in a Hightouch-inspired Customer Studio view.",
+    "Women’s Tops — Viewed, Not Purchased customer activation journey for Meridian Retail Group.",
+  )
+  .replace(
+    "<title>Meridian Retail Group — Customer Studio Schema</title>",
+    "<title>Women’s Tops — Viewed, Not Purchased</title>",
+  );
+writeFileSync(path.join(dist, "client", "journey", "index.html"), journeyHtml);
+
+console.log("Prepared journey route and Sites compatibility artifacts");
