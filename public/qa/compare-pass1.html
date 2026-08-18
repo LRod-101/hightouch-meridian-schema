@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hightouch schema visual comparison</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding: 24px;
+        background: #e9edf0;
+        color: #18222a;
+        font-family: Inter, Arial, sans-serif;
+      }
+      h1 { margin: 0 0 18px; font-size: 22px; }
+      .comparison {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      figure {
+        margin: 0;
+        padding: 12px;
+        background: #fff;
+        border: 1px solid #d2d9de;
+        border-radius: 12px;
+        box-shadow: 0 8px 22px rgba(21, 34, 45, 0.08);
+      }
+      figcaption {
+        margin: 0 0 10px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: 1px solid #eef1f3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Full-view comparison · default state</h1>
+    <main class="comparison">
+      <figure>
+        <figcaption>Reference · Hightouch Customer Studio</figcaption>
+        <img src="reference.png" alt="Reference Hightouch Customer Studio schema screen" />
+      </figure>
+      <figure>
+        <figcaption>Implementation · Meridian schema prototype</figcaption>
+        <img src="implementation-pass1.png" alt="Implemented Meridian schema prototype" />
+      </figure>
+    </main>
+  </body>
+</html>
