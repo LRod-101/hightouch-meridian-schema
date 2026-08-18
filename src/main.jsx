@@ -2,7 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import { App } from "./App.jsx";
 import { JourneyApp } from "./JourneyApp.jsx";
-import { presentationTitle, resolvePresentationRoute } from "./presentationRoute.js";
+import { presentationBodyClass, presentationTitle, resolvePresentationRoute } from "./presentationRoute.js";
 import "./styles.css";
 import "./journey.css";
 
@@ -12,6 +12,7 @@ const Presentation = route === "journey"
   : App;
 
 document.title = presentationTitle(route);
+document.body.className = presentationBodyClass(route);
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>

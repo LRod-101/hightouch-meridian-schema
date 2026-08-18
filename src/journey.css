@@ -1,3 +1,7 @@
+.journey-route {
+  overflow: auto;
+}
+
 .journey-screen {
   overflow: hidden;
   color: #293033;
@@ -145,8 +149,8 @@
 
 .start-card { left: 500px; top: 8px; height: 131px; }
 .loyalty-segment { left: 500px; top: 155px; height: 78px; }
-.vip-destination { left: 185px; top: 277px; width: 330px; height: 120px; }
-.standard-destination { left: 800px; top: 277px; width: 330px; height: 120px; }
+.vip-destination { left: 185px; top: 277px; width: 330px; height: 138px; }
+.standard-destination { left: 800px; top: 277px; width: 330px; height: 138px; }
 .delay-card { left: 500px; top: 440px; height: 72px; }
 .engagement-segment { left: 500px; top: 550px; height: 78px; }
 .engaged-destination { left: 110px; top: 678px; width: 340px; height: 127px; }
