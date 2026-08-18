@@ -8,3 +8,7 @@ export function presentationTitle(route) {
     ? 'Women’s Tops — Viewed, Not Purchased'
     : 'Meridian Retail Group — Customer Studio Schema'
 }
+
+export function presentationBodyClass(route) {
+  return route === 'journey' ? 'journey-route' : ''
+}
